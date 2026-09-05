@@ -1,0 +1,33 @@
+/*NORMALIZACIÓN*/
+*, *::before, ::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*ESTILO BASSE Y HTML/BODY*/
+html{
+    scroll-behavior: smooth;
+    font-size: 100%;
+}
+
+body{
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+}
+
+
+/*CONFIGURACION PARA APLICAR EL SPA*/
+.seccion .active{
+    display: block;
+}
+
+.seccion{
+    display: none;
+}
+
+/*BOTONES DEL SIDEBAR*/
+.menu .menu-item .active{
+    background-color: var(--marca-primario);
+}

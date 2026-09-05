@@ -1,0 +1,268 @@
+/* ============================================================
+   MÓDULO: ALERTAS DE STOCK
+   RF-27 a RF-31 · CU-14, CU-15
+============================================================ */
+
+.cont-alertas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Tarjetas resumen --- */
+
+.cont-cards-alertas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.cards-alerta {
+    background: var(--color-superficie, #FFFFFF);
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cards-alerta p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--color-texto-secundario, #706F68);
+}
+
+.cards-alerta .total-alerta {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-texto, #1A1A1A);
+}
+
+.cards-alerta .total-alerta.danger {
+    color: var(--color-peligro, #96271E);
+}
+
+.cards-alerta .total-alerta.warning {
+    color: var(--color-advertencia, #854F0B);
+}
+
+.cards-alerta .total-alerta.info {
+    color: var(--color-primario, #2B3AEA);
+}
+
+/* --- Header: filtros (Todas/Activas/Resueltas) + buscador --- */
+
+.alertas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.alertas-header .filtros {
+    display: flex;
+    gap: 8px;
+}
+
+.alertas-header .btn-filtros {
+    padding: 8px 16px;
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 20px;
+    background: var(--color-superficie, #FFFFFF);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--color-texto-secundario, #706F68);
+    cursor: pointer;
+    transition: all .15s ease;
+}
+
+.alertas-header .btn-filtros:hover {
+    border-color: var(--color-primario, #2B3AEA);
+    color: var(--color-primario, #2B3AEA);
+}
+
+.alertas-header .btn-filtros.active-btn {
+    background: var(--color-primario, #2B3AEA);
+    border-color: var(--color-primario, #2B3AEA);
+    color: #FFFFFF;
+}
+
+.alertas-header form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 260px;
+}
+
+.alertas-header form input[type="search"] {
+    width: 100%;
+    padding: 9px 40px 9px 14px;
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 8px;
+    background: var(--color-superficie, #FFFFFF);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--color-texto, #1A1A1A);
+}
+
+.alertas-header .icono-lupa {
+    position: absolute;
+    right: 14px;
+    display: flex;
+}
+
+.alertas-header .icono-lupa img {
+    width: 16px;
+    height: 16px;
+    opacity: .6;
+}
+
+/* --- Tabla de alertas --- */
+
+.tabla-alertas {
+    background: var(--color-superficie, #FFFFFF);
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tabla-alertas table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-alertas thead th {
+    text-align: left;
+    padding: 14px 18px;
+    background: var(--color-primario, #2B3AEA);
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .03em;
+}
+
+.tabla-alertas tbody td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--color-borde, #E4E1DA);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--color-texto, #1A1A1A);
+    vertical-align: middle;
+}
+
+.tabla-alertas tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-alertas tbody tr:hover {
+    background: var(--color-primario-claro, #EEEDFE);
+}
+
+.tabla-alertas .producto {
+    font-weight: 600;
+}
+
+.tabla-alertas .sku {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--color-texto-secundario, #706F68);
+}
+
+/* --- Badge: tipo de alerta (stock_bajo / agotado / sobre_stock) --- */
+
+.tipo-alerta {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tipo-alerta.agotado {
+    color: var(--color-peligro, #96271E);
+    background: var(--color-peligro-fondo, #FBEAEA);
+}
+
+.tipo-alerta.stock-bajo {
+    color: var(--color-advertencia, #854F0B);
+    background: var(--color-advertencia-fondo, #FAEEDA);
+}
+
+.tipo-alerta.sobre-stock {
+    color: var(--color-primario, #2B3AEA);
+    background: var(--color-primario-claro, #EEEDFE);
+}
+
+/* --- Badge: estado (activa / resuelta) --- */
+
+.estado-alerta {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.estado-alerta.activa {
+    color: var(--color-peligro, #96271E);
+    background: var(--color-peligro-fondo, #FBEAEA);
+}
+
+.estado-alerta.resuelta {
+    color: var(--color-exito, #0F6E56);
+    background: var(--color-exito-fondo, #E1F5EE);
+}
+
+/* --- Acciones --- */
+
+.tabla-alertas .acciones {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tabla-alertas .acciones button {
+    padding: 6px 12px;
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 6px;
+    background: var(--color-superficie, #FFFFFF);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--color-texto, #1A1A1A);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .15s ease;
+}
+
+.tabla-alertas .acciones button:hover {
+    border-color: var(--color-primario, #2B3AEA);
+    color: var(--color-primario, #2B3AEA);
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 900px) {
+    .cont-cards-alertas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .alertas-header form {
+        min-width: 100%;
+    }
+
+    .tabla-alertas {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    .cont-cards-alertas {
+        grid-template-columns: 1fr;
+    }
+}

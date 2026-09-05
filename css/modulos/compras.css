@@ -1,0 +1,196 @@
+/* ============================================================
+   MÓDULO: COMPRAS
+   RF-23 a RF-26 · CU-09
+   Usa var(--tu-variable, #hex) → si tu variables.css ya define
+   la variable, la respeta; si no, cae al color de la paleta
+   "Índigo profesional" (sección 5.7 del SRS).
+============================================================ */
+
+.cont-compras {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Header: buscador + filtro de estado + botón nueva compra --- */
+
+
+
+
+
+.compras-header form input[type="search"] {
+    width: 100%;
+    padding: 10px 40px 10px 14px;
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 8px;
+    background: var(--color-superficie, #FFFFFF);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--color-texto, #1A1A1A);
+}
+
+.compras-header form input[type="search"]::placeholder {
+    color: var(--color-texto-secundario, #706F68);
+}
+
+.compras-header .icono-lupa {
+    position: absolute;
+    right: 14px;
+    display: flex;
+}
+
+.compras-header .icono-lupa img {
+    width: 16px;
+    height: 16px;
+    opacity: .6;
+}
+
+#estado-compra {
+    padding: 10px 14px;
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 8px;
+    background: var(--color-superficie, #FFFFFF);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--color-texto, #1A1A1A);
+    cursor: pointer;
+}
+
+.compras-header button[data-action="nueva-compra"] {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--color-primario, #2B3AEA);
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .15s ease;
+}
+
+.compras-header button[data-action="nueva-compra"] span {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.compras-header button[data-action="nueva-compra"]:hover {
+    background: var(--color-primario-oscuro, #1B2380);
+}
+
+/* --- Tabla de compras --- */
+
+.tabla-compras {
+    background: var(--color-superficie, #FFFFFF);
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tabla-compras table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-compras thead th {
+    text-align: left;
+    padding: 14px 18px;
+    background: var(--color-primario, #2B3AEA);
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .03em;
+}
+
+.tabla-compras tbody td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--color-borde, #E4E1DA);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--color-texto, #1A1A1A);
+    vertical-align: middle;
+}
+
+.tabla-compras tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-compras tbody tr:hover {
+    background: var(--color-primario-claro, #EEEDFE);
+}
+
+.tabla-compras .proveedor {
+    font-weight: 600;
+}
+
+/* --- Estados: confirmada / anulada --- */
+
+.tabla-compras .estado {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tabla-compras .estado.confirmada {
+    color: var(--color-exito, #0F6E56);
+    background: var(--color-exito-fondo, #E1F5EE);
+}
+
+.tabla-compras .estado.anulada {
+    color: var(--color-peligro, #96271E);
+    background: var(--color-peligro-fondo, #FBEAEA);
+}
+
+/* --- Acciones --- */
+
+.tabla-compras .acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.tabla-compras .acciones button {
+    padding: 6px 12px;
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 6px;
+    background: var(--color-superficie, #FFFFFF);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--color-texto, #1A1A1A);
+    cursor: pointer;
+    transition: all .15s ease;
+}
+
+.tabla-compras .acciones button:hover {
+    border-color: var(--color-primario, #2B3AEA);
+    color: var(--color-primario, #2B3AEA);
+}
+
+.tabla-compras .acciones button[data-action="anular-compra"]:hover {
+    border-color: var(--color-peligro, #96271E);
+    color: var(--color-peligro, #96271E);
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 900px) {
+    .compras-header {
+        flex-wrap: wrap;
+    }
+
+    .compras-header form {
+        min-width: 100%;
+        order: -1;
+    }
+
+    .tabla-compras {
+        overflow-x: auto;
+    }
+}

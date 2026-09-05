@@ -1,0 +1,146 @@
+/* =========================================================
+   InvenTrack - SPA
+   Estados de las secciones y módulos
+   ========================================================= */
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+#cont-principal {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+}
+
+
+/* =========================================================
+   SECCIONES SPA
+   ========================================================= */
+
+/*
+    Todas las secciones están ocultas
+    hasta que spa.js active una.
+*/
+
+#cont-principal .seccion {
+    display: none;
+}
+
+
+/*
+    Solamente la sección activa se muestra.
+*/
+
+#cont-principal .seccion.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   SIDEBAR - ELEMENTO ACTIVO
+   ========================================================= */
+
+.container .sidebar .menu .menu-item li.active {
+    background-color: var(--marca-primario);
+}
+
+
+/* =========================================================
+   PLACEHOLDER DE LOS MÓDULOS
+   ========================================================= */
+
+.module-placeholder {
+
+    margin: 20px;
+
+    padding: 60px 30px;
+
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background-color: var(--superficie, #ffffff);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 10px;
+}
+
+
+/* Icono temporal */
+
+.module-placeholder__icon {
+
+    margin-bottom: 12px;
+
+    font-size: 32px;
+
+}
+
+
+/* Título */
+
+.module-placeholder h3 {
+
+    margin: 0 0 8px;
+
+    font-size: 20px;
+
+    color: var(--texto-principal);
+
+}
+
+
+/* Texto principal */
+
+.module-placeholder p {
+
+    margin: 0 0 6px;
+
+    font-size: 14px;
+
+    color: var(--texto-principal);
+
+}
+
+
+/* Texto secundario */
+
+.module-placeholder small {
+
+    max-width: 520px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: var(--texto-segundario);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .module-placeholder {
+
+        margin: 15px;
+
+        padding: 40px 20px;
+
+    }
+
+}

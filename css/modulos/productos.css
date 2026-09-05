@@ -1,0 +1,134 @@
+
+
+/*CONTENEDOR PRINCIPAL*/
+.cont-productos{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: var(--texto-principal);
+    font-family: "Inter", sans-serif;
+}
+
+/*CABCERA DE PRODUCTOS (ACCIONES)*/
+.prod-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/*Buscador*/
+form .icono-lupa img{
+    width: 20px;
+    transform: translate(-43vh, 4px);
+}
+
+form input{
+    padding: 10px 60px 10px 30px;
+    
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid var(--borde);
+}
+
+form input:focus{
+    outline: 1.5px solid var(--borde);
+}
+
+/*menú desplegable de las categorias*/
+select{
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid var(--borde);
+    outline: none;
+    font-size: 12px;
+}
+
+select:focus{
+    outline: 1.5px solid var(--borde);
+}
+
+/*Boton de agregar producto*/
+button{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--marca-oscuro);
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: "Inter", sans-serif;
+
+    cursor: pointer;
+}
+
+button span{
+    font-size: 14px;
+}
+
+button:hover{
+    background-color: var(--marca-primario);
+}
+
+/*TABLA DE LOS PRODUCTOS*/
+.tabla-prods{
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 10px 10px 10px;
+    padding-bottom: 20px;
+
+    height: 70vh;
+    overflow-y: auto;
+}
+
+.tabla-prods table thead th{
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    background-color: white;
+}
+
+.tabla-prods table th{
+    padding: 10px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.tabla-prods .producto{
+    color: var(--texto-principal);
+    font-weight: 700;
+}
+
+/*Estados*/
+.tabla-prods .activo{
+    background-color: #bbeee180;
+    color: var(--exito);
+    border-left: 2px solid var(--exito);
+}
+
+.tabla-prods .agotado{
+    background-color: #eec5bbad;
+    color: var(--peligro);
+    border-left: 2px solid var(--peligro);
+}
+
+.tabla-prods .stock-bajo{
+    background-color: #e7d4bc96;
+    color: var(--advertencia);
+    border-left: 2px solid var(--advertencia);
+}
+
+/*Botones de acciones*/
+.tabla-prods .acciones button{
+    padding: 5px;
+    background-color: white;
+    color: var(--marca-oscuro);
+    border-radius: 5px;
+    border: 1px solid var(--marca-oscuro);
+}
+
+.tabla-prods .acciones button:hover{
+    background-color: var(--marca-primario);
+    color: white;
+}

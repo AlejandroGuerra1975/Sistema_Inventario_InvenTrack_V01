@@ -1,0 +1,190 @@
+
+/*NORMALIZACIÓN*/
+*, *::before, ::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*VARIABLES GLOBALES*/
+:root{
+    --marca-primario: #2B3AEA;
+    --marca-oscuro: #1B2380;
+    --marca-claro: #EEEDFE;
+    --fondo-pagina: #F7F6F2;
+    --superficie: #FFFFFF;
+    --borde: #E4E1DA;
+    --texto-principal: #1A1A1A;
+    --texto-segundario: #706F68;
+    --exito: #0F6E56;
+    --advertencia: #854F0B;
+    --peligro: #96271E;
+}
+
+/*ESTILO BASSE Y HTML/BODY*/
+html{
+    scroll-behavior: smooth;
+    font-size: 100%;
+}
+
+body{
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+}
+
+/*PONEMOS LAS SECCIONES JUNTAS EN FILA*/
+.container-sections{
+    display: flex;
+    height: 100vh;
+}
+
+.container-sections section{
+    flex: 1;
+    display: flex;
+    padding: 50px;
+}
+
+/*ESTILOS DE  LA SECCION IZQUIERDA*/
+.lado-izq{
+    background-color: var(--marca-oscuro);
+    flex-direction: column;
+}
+
+.lado-izq .logo img{
+    justify-content: right;
+    width: 20vh;
+}
+
+.lado-izq .cont-izq .cont-central{
+    display: flex;
+    color: white;
+    flex-direction: column;
+    margin-top: 25vh;
+    width: 60vh;
+}
+
+.lado-izq .cont-izq .cont-central p{
+    color: rgb(165, 163, 163);
+    font-weight: 600;
+    width: 80vh;
+}
+
+/*ESTILOS DE LA SECCIÓN DERECHA*/
+.lado-der{
+    display: flex;
+    background-color: var(--fondo-pagina);
+    justify-content: center;
+    align-items: center;
+}
+
+/*contenedor del login*/
+.cont-login form{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    padding: 40px 30px;
+
+    border: 2px solid var(--borde);
+    border-radius: 10px;
+
+    text-align: center;
+    background-color: white;
+}
+
+/*Titulo del formulario*/
+.form-titulo h2{
+    text-align: left;
+    color: var(--texto-principal);
+    font-size: 20px;
+}
+
+.form-titulo p{
+    text-align: left;
+    font-size: 14px;
+    color: var(--texto-segundario);
+}
+
+/*Inputs del formulario*/
+.form-cont{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.form-cont label{
+    color: var(--texto-principal);
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.form-cont input{
+    width: 55vh;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    border: 2px solid var(--borde);
+    background-color: var(--fondo-pagina);
+}
+
+/*Opciones del formulario*/
+.form-opciones{
+    display: flex;
+    gap: 40px;
+    font-size: 14px;
+    margin: 15px 0 15px 0;
+    justify-content: center;
+}
+
+.form-opciones .opc-record{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 3px;
+
+    color: var(--texto-segundario);
+}
+
+.form-opciones .opc-recup a{
+    color: var(--marca-primario);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/*Boton de iniciar sesión*/
+form button{
+    padding: 10px;
+    width: 55vh;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--marca-primario);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+form button:hover{
+    background-color: var(--marca-oscuro);
+}
+
+/*Tarjetas de roles*/
+.roles{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.roles .rol-tarjeta{
+    padding: 7px;
+    border: 2px solid var(--borde);
+    border-radius: 10px;
+
+    cursor: pointer;
+}

@@ -1,0 +1,33 @@
+/*CONTENEDOR DE MOVIMIENTOS*/
+.cont-movimientos{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: var(--texto-principal);
+    font-family: "Inter", sans-serif;
+}
+
+/*CABECERA ACCIONES FILTROS Y BSUCAR*/
+.mov-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*filtros*/
+.filtros{
+    display: flex;
+}
+
+.filtros button{
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+    border: 1.5px solid var(--borde);
+    color: var(--texto-segundario);
+}
+
+.filtros .active-btn{
+    background-color: var(--fondo-pagina);
+    border: 1.7px solid var(--marca-oscuro);
+    color: var(--texto-principal);
+}

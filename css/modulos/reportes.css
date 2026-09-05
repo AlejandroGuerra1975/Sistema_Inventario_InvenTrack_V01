@@ -1,0 +1,194 @@
+/* ============================================================
+   MÓDULO: REPORTES
+   RF-32 a RF-37 · CU-16 a CU-20
+   4 paneles (.reporte-panel) alternados con data-panel; solo
+   .reporte-panel.active se muestra. Cablea el toggle en tu
+   botones.js igual que ya haces con .btn-filtros / .active-btn.
+============================================================ */
+
+.cont-reportes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Header: tabs de tipo de reporte + periodo + exportar --- */
+
+.reportes-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.reportes-header .filtros {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.reportes-header .btn-filtros {
+    padding: 8px 16px;
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 20px;
+    background: var(--color-superficie, #FFFFFF);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--color-texto-secundario, #706F68);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .15s ease;
+}
+
+.reportes-header .btn-filtros:hover {
+    border-color: var(--color-primario, #2B3AEA);
+    color: var(--color-primario, #2B3AEA);
+}
+
+.reportes-header .btn-filtros.active-btn {
+    background: var(--color-primario, #2B3AEA);
+    border-color: var(--color-primario, #2B3AEA);
+    color: #FFFFFF;
+}
+
+.reportes-acciones {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reportes-acciones select {
+    padding: 9px 14px;
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 8px;
+    background: var(--color-superficie, #FFFFFF);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--color-texto, #1A1A1A);
+    cursor: pointer;
+}
+
+.reportes-acciones button {
+    padding: 9px 16px;
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 8px;
+    background: var(--color-superficie, #FFFFFF);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--color-texto, #1A1A1A);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .15s ease;
+}
+
+.reportes-acciones button:hover {
+    border-color: var(--color-primario, #2B3AEA);
+    color: var(--color-primario, #2B3AEA);
+}
+
+/* --- Paneles de reporte (uno visible a la vez) --- */
+
+.reporte-panel {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reporte-panel.active {
+    display: flex;
+}
+
+/* --- Tarjetas de indicadores por reporte --- */
+
+.cont-cards-reporte {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.cards-reporte {
+    background: var(--color-superficie, #FFFFFF);
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cards-reporte p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--color-texto-secundario, #706F68);
+}
+
+.cards-reporte .valor-reporte {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primario, #2B3AEA);
+}
+
+/* --- Tabla de detalle del reporte --- */
+
+.tabla-reporte {
+    background: var(--color-superficie, #FFFFFF);
+    border: 1px solid var(--color-borde, #E4E1DA);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tabla-reporte table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-reporte thead th {
+    text-align: left;
+    padding: 14px 18px;
+    background: var(--color-primario, #2B3AEA);
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .03em;
+}
+
+.tabla-reporte tbody td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--color-borde, #E4E1DA);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--color-texto, #1A1A1A);
+}
+
+.tabla-reporte tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-reporte tbody tr:hover {
+    background: var(--color-primario-claro, #EEEDFE);
+}
+
+.tabla-reporte .producto {
+    font-weight: 600;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 900px) {
+    .reportes-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .reportes-acciones {
+        flex-wrap: wrap;
+    }
+
+    .tabla-reporte {
+        overflow-x: auto;
+    }
+}

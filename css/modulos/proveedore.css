@@ -1,0 +1,70 @@
+/*CONTENIDO PROVEEDORES*/
+.cont-proveedores{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: var(--texto-principal);
+    font-family: "Inter", sans-serif;
+}
+
+/*CABECERA ACCIONES BUSCAR Y AGG*/
+.cont-proveedores .prove-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*TABLA DE PROVEEDORES*/
+.tabla-prove{
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 10px 10px 10px;
+    padding-bottom: 20px;
+
+    height: 70vh;
+    overflow-y: auto;
+}
+
+.tabla-prove table thead th{
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    background-color: white;
+}
+
+.tabla-prove table th{
+    padding: 10px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.tabla-prove .proveedor{
+    font-weight: 700;
+}
+
+/*Estados*/
+.tabla-prove .activo{
+    background-color: #bbeee180;
+    color: var(--exito);
+    border-left: 2px solid var(--exito);
+}
+
+.tabla-prove .inactivo{
+    background-color: #eec5bbad;
+    color: var(--peligro);
+    border-left: 2px solid var(--peligro);
+}
+
+/*Botones de acciones*/
+.tabla-prove .acciones button{
+    padding: 5px;
+    background-color: white;
+    color: var(--marca-oscuro);
+    border-radius: 5px;
+    border: 1px solid var(--marca-oscuro);
+}
+
+.tabla-prove .acciones button:hover{
+    background-color: var(--marca-primario);
+    color: white;
+}

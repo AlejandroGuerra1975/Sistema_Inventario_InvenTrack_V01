@@ -1,0 +1,65 @@
+/*CONTENIDO CATEGORÍAS*/
+.cont-categorias{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: var(--texto-principal);
+    font-family: "Inter", sans-serif;
+}
+
+/*CABECERA BUSCAR Y AGG*/
+.categ-header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/*TABLA DE CATEGORÍAS*/
+.tabla-categ{
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+
+    height: 70vh;
+    overflow-y: auto;
+}
+
+.tabla-categ table thead th{
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    background-color: white;
+}
+
+.tabla-categ table th{
+    padding: 10px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.tabla-categ tbody{
+    padding-left: 5px;
+}
+
+.tabla-categ td{
+    font-weight: 700;
+}
+
+.tabla-categ .desc-categ{
+    color: var(--texto-segundario);
+}
+
+/*Botones de acciones*/
+.tabla-categ .acciones button{
+    padding: 5px;
+    background-color: white;
+    color: var(--marca-oscuro);
+    border-radius: 5px;
+    border: 1px solid var(--marca-oscuro);
+}
+
+.tabla-categ .acciones button:hover{
+    background-color: var(--marca-primario);
+    color: white;
+}

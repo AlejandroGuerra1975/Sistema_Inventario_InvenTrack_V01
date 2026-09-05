@@ -1,0 +1,14 @@
+/*VARIABLES GLOBALES*/
+:root{
+    --marca-primario: #2B3AEA;
+    --marca-oscuro: #1B2380;
+    --marca-claro: #EEEDFE;
+    --fondo-pagina: #F7F6F2;
+    --superficie: #FFFFFF;
+    --borde: #E4E1DA;
+    --texto-principal: #1A1A1A;
+    --texto-segundario: #706F68;
+    --exito: #0F6E56;
+    --advertencia: #854F0B;
+    --peligro: #96271E;
+}

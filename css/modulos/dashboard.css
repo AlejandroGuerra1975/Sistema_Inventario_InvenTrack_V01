@@ -1,0 +1,315 @@
+
+
+/*ESTILOS DE LA SECTION DASHBOARD*/
+.seccion{
+    background-color: var(--fondo-pagina);
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/*HEADER DEL CONTENIDO DASHBOARD*/
+.seccion header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    border-bottom: 1px solid var(--borde);
+    
+    background-color: var(--superficie);
+}
+
+.seccion header h2{
+    font-size: 18px;
+    color: var(--texto-principal);
+}
+
+/*Opcion de cuenta*/
+.seccion header .cont-cuenta{
+    display: flex;
+    gap: 0px;
+    color: var(--texto-principal);
+}
+
+.seccion header .cont-cuenta span{
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--marca-oscuro);
+
+    padding: 5px 10px;
+    background-color: var(--marca-claro);
+    border-radius: 10px;
+}
+
+.seccion header .cont-cuenta a{
+    background-color: var(--marca-claro);
+    padding: 5px;
+    text-decoration: none;
+    color: var(--marca-oscuro);
+
+    border-radius: 50%;
+}
+
+
+/*CONTENIDO DEL DASHBOARD*/
+.cont-dashboard{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    /* overflow-y: auto; */
+}
+
+/*CARDS*/
+.cont-cards{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-bottom: 20px;
+}
+
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    line-height: 1.5;
+    border-radius: 10px;
+    border: 1px solid var(--borde);
+
+    background-color: white;
+    padding: 10px 150px 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.cards:hover{
+    transform: translateY(-3px);
+}
+
+.cards p{
+    white-space: nowrap; /* esto evita que el texto salte de linea automáticamente*/
+    font-size: 12px;
+    color: var(--texto-segundario);
+}
+
+.cards .total-prods{
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--texto-principal);
+}
+
+.cards .estad{
+    font-size: 12px;
+    color: var(--exito);
+    white-space: nowrap;
+}
+
+.cards .alert{
+    font-size: 12px;
+    color: var(--advertencia);
+    white-space: nowrap;
+}
+
+/*ESTILOS PARA LAS CARDS DE VENTAS DE LA SEMANA Y ALERTAS DE STOCK*/
+.resum-alertas{
+    display: flex;
+
+}
+/*BARRAS*/
+.cards-resum {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    /* max-width: 600px; */
+    width: 60%;
+    border: 1px solid var(--borde);
+}
+
+.cards-resum h2 {
+    font-size: 14px;
+    color: var(--texto-principal);
+    margin-bottom: 16px; /* Añadido un pequeño margen inferior */
+}
+
+/* Contenedor de las filas */
+.barras-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    border-bottom: 1px solid var(--borde);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.barra {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.dia {
+    width: 30px;
+    font-size: 12px;
+    color: var(--texto-segundario);
+    font-weight: 700;
+}
+
+.barr-track {
+    flex: 1;
+    height: 10px;
+    background-color: var(--fondo-pagina);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+
+.barr-fill {
+    height: 100%;
+    background-color: var(--marca-primario);
+    border-radius: 999px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.valor {
+    width: 45px; /* Ampliado para dar espacio a montos como $1.4M */
+    text-align: right; /* alineado a la derecha */
+    font-size: 12px;
+    color: var(--texto-segundario);
+    font-weight: 700;
+}
+
+/*TABLA DE MOVIMIENTOS*/
+table{
+    width: 100%;
+    border-collapse: collapse; /*para que el borde sea una sola linea continua*/
+}
+
+thead th{
+    padding: 15px;
+    color: var(--texto-segundario);
+}
+
+thead, tbody th, td{
+    border-bottom: 2px solid var(--borde);
+    padding: 15px;
+    font-size: 12px;
+    text-align: left;
+}
+
+tbody td{
+    padding: 10px;
+    font-size: 12px;
+}
+
+tbody .producto{
+    font-weight: 700;
+}
+
+.tipo{
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.entrada{
+    background-color: #bbeee180;
+    color: var(--exito);
+    border-left: 2px solid var(--exito);
+}
+
+.salida{
+    background-color: #eec5bbad;
+    color: var(--peligro);
+    border-left: 2px solid var(--peligro);
+}
+
+.ajuste{
+    background-color: #e7d4bc96;
+    color: var(--advertencia);
+    border-left: 2px solid var(--advertencia);
+}
+
+/*TABLA DE ALERTAS DE STOCK*/
+.alertas-stock{
+    flex: 1;
+    background-color: white;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.alertas-stock h2{
+    font-size: 14px;
+    color: var(--texto-principal);
+    margin-bottom: 10px; /* Añadido un pequeño margen inferior */
+}
+
+/*Estilos de los estados en la tabla*/
+.tabla-alert{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--borde);
+}
+.tabla-alert tbody tr,td{
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+.tabla-alert tbody tr td{
+    width: 100%;
+}
+
+.tabla-alert table .prod{
+    color: var(--texto-principal);
+    font-weight: 700;
+}
+
+.tabla-alert table .prod span{
+    font-size: 11px;
+    color: var(--texto-segundario);
+    font-weight: 700;
+}
+
+tbody .estado{
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 700;
+}
+
+tbody .agotado{
+    background-color: #eec5bbad;
+    color: var(--peligro);
+    border-left: 2px solid var(--peligro);
+}
+
+tbody .stock-bajo{
+    background-color: #e7d4bc96;
+    color: var(--advertencia);
+    border-left: 2px solid var(--advertencia);
+}
+
+/*BOTON DE VER TODAS LAS ALERTAS*/
+.ver-todas button{
+    padding: 8px;
+    text-align: center;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid var(--borde);
+    background-color: white;
+    color: var(--texto-principal);
+    font-weight: 700;
+    font-family:  "Inter", sans-serif;
+
+    cursor: pointer;
+}
+
+.ver-todas button:hover{
+    background-color: var(--marca-claro);
+}

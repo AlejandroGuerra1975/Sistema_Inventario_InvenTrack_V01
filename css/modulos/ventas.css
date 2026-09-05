@@ -1,0 +1,8 @@
+/*CONTENEDOR DE VENTAS*/
+.cont-ventas{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: var(--texto-principal);
+    font-family: "Inter", sans-serif;
+}

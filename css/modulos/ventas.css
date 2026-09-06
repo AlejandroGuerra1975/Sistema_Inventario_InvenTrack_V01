@@ -6,3 +6,72 @@
     color: var(--texto-principal);
     font-family: "Inter", sans-serif;
 }
+
+
+
+
+/*TABLA DE VENTAS*/
+.tabla-ventas{
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 10px 10px 10px;
+    padding-bottom: 20px;
+
+    height: 70vh;
+    overflow-y: auto;
+}
+
+.tabla-ventas table thead th{
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    background-color: white;
+}
+
+.tabla-ventas table th{
+    padding: 10px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.tabla-ventas .ticket{
+    font-weight: 700;
+}
+
+.tabla-ventas .proveedor{
+    font-weight: 700;
+}
+
+/*Estados*/
+.estado-venta{
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.tabla-ventas .confir{
+    background-color: #bbeee180;
+    color: var(--exito);
+    border-left: 2px solid var(--exito);
+}
+
+.tabla-ventas .anulada{
+    background-color: #eec5bbad;
+    color: var(--peligro);
+    border-left: 2px solid var(--peligro);
+}
+
+/*Botones de acciones*/
+.tabla-ventas .acciones button{
+    padding: 5px;
+    background-color: white;
+    color: var(--marca-oscuro);
+    border-radius: 5px;
+    border: 1px solid var(--marca-oscuro);
+}
+
+.tabla-ventas .acciones button:hover{
+    background-color: var(--marca-primario);
+    color: white;
+}

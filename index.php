@@ -1160,7 +1160,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
                     </div>
 
-                    <div class="tabla-categ">
+                    <div class="tabla-ventas">
 
                         <table>
 
@@ -1178,12 +1178,12 @@ if (!isset($_SESSION['usuario_id'])) {
 
                             <tbody>
                                 <tr>
-                                    <td>#00482</td>
+                                    <td class="ticket">#00482</td>
                                     <td>Daniela Eslava</td>
                                     <td>02/08/2026 10:32pm</td>
                                     <td>3 lineas</td>
                                     <td>$23.100</td>
-                                    <td><span>Confirmada</span></td>
+                                    <td><span class="estado-venta confir">Confirmada</span></td>
                                     <td>
                                         <div class="acciones">
                                             <button data-action="ver-venta" id="1">Ver</button>
@@ -1214,7 +1214,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
                 <header>
 
-                    <h2>Ventas</h2>
+                    <h2>Compras</h2>
 
                     <div class="cont-cuenta">
 
@@ -1237,8 +1237,6 @@ if (!isset($_SESSION['usuario_id'])) {
 
                 <div class="cont-compras">
 
-                    <div class="cont-ventas">
-
                     <div class="categ-header">
 
                         <form action="" method="GET">
@@ -1251,15 +1249,14 @@ if (!isset($_SESSION['usuario_id'])) {
                     </div>
 
                     <div class="tabla-compras">
+
                         <table>
 
                             <thead>
                                 <tr>
-                                    <th>COMPRA</th>
                                     <th>PROVEEDOR</th>
-                                    <th>USUARIO</th>
+                                    <th>REGISTRADA POR</th>
                                     <th>FECHA</th>
-                                    <th>PRODUCTOS</th>
                                     <th>TOTAL</th>
                                     <th>ESTADO</th>
                                     <th>ACCIONES</th>
@@ -1267,15 +1264,12 @@ if (!isset($_SESSION['usuario_id'])) {
                             </thead>
 
                             <tbody>
-
                                 <tr>
-                                    <td>#00118</td>
-                                    <td><span class="proveedor">Distribuidora La Central</span></td>
-                                    <td>Julián Gimenez</td>
-                                    <td>02/08/2026 09:15am</td>
-                                    <td>5 líneas</td>
-                                    <td>$412.600</td>
-                                    <td><span class="estado confirmada">Confirmada</span></td>
+                                    <td class="provee">Distribuidora La Central</td>
+                                    <td>Julian Bermudez</td>
+                                    <td>02/08/2026 10:32pm</td>
+                                    <td>$1,840,000</td>
+                                    <td><span class="estado-compra confir">Confirmada</span></td>
                                     <td>
                                         <div class="acciones">
                                             <button data-action="ver-compra" id="1">Ver</button>
@@ -1283,25 +1277,10 @@ if (!isset($_SESSION['usuario_id'])) {
                                         </div>
                                     </td>
                                 </tr>
-
-                                <tr>
-                                    <td>#00117</td>
-                                    <td><span class="proveedor">Alimentos Del Valle S.A.S.</span></td>
-                                    <td>Julián Gimenez</td>
-                                    <td>01/08/2026 04:52pm</td>
-                                    <td>2 líneas</td>
-                                    <td>$96.000</td>
-                                    <td><span class="estado anulada">Anulada</span></td>
-                                    <td>
-                                        <div class="acciones">
-                                            <button data-action="ver-compra" id="1">Ver</button>
-                                        </div>
-                                    </td>
-                                </tr>
-
                             </tbody>
 
                         </table>
+
                     </div>
 
                 </div>

@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- Librería SweetAlert2 necesaria para las alertas -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link rel="stylesheet" href="css/login.css">
     <title>InvenTrack Login</title>
@@ -49,14 +52,14 @@
                         <label for="correo">Correo electrónico</label>
                         <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" required>
 
-                        <label for="contraseña">Contrasena</label>
-                        <input type="password" id="correo" name="contrasena" placeholder="Ingresa tu contraseña" required>
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
                     </div>
 
                     <div class="form-opciones">
                         <div class="opc-record">
                             <label for="recordarme">Recordarme</label>
-                            <input type="checkbox" name="recordarme">
+                            <input type="checkbox" id="recordarme" name="recordarme">
                         </div>
 
                         <div class="opc-recup">
@@ -73,12 +76,12 @@
                         </label>
 
                         <label class="rol-tarjeta">
-                            <input type="radio" name="rol" value="vendedor" checked>
+                            <input type="radio" name="rol" value="vendedor">
                             <span class="cont-rol">Vendedor</span>
                         </label>
 
                         <label class="rol-tarjeta">
-                            <input type="radio" name="rol" value="operario" checked>
+                            <input type="radio" name="rol" value="operario">
                             <span class="cont-rol">Operario</span>
                         </label>
                     </div>
@@ -88,6 +91,25 @@
         </section>
 
     </div>
+
+    <?php
+    // Mostrar alerta SweetAlert2 si existe el mensaje en la sesión
+    if (isset($_SESSION['error'])) {
+        $mensajeError = $_SESSION['error'];
+        ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Error de autenticación',
+                text: '<?php echo $mensajeError; ?>',
+                confirmButtonText: 'Aceptar'
+            });
+        </script>
+        <?php
+        // Eliminar el mensaje para no mostrarlo de nuevo al recargar
+        unset($_SESSION['error']);
+    }
+    ?>
 
 </body>
 

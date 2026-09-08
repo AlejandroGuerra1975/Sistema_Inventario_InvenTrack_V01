@@ -19,7 +19,7 @@ $resultado = $consulta->get_result();
 if($resultado->num_rows === 1){
     $fila = $resultado->fetch_assoc();
 
-    // Verificación de contraseña (soporta hash o texto plano para tus pruebas)
+    // Verificación de contraseña (soporta hash o texto plano)
     if(password_verify($clave, $fila['contrasena']) || $clave === $fila['contrasena']){
         $_SESSION['usuario_id'] = $fila['id_usuario'];
         $_SESSION['correo'] = $fila['correo'];

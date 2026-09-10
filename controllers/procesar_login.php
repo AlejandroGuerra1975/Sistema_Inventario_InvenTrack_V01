@@ -30,7 +30,7 @@ if($resultado->num_rows === 1){
     }
 }
 
-$_SESSION['error'] = "Usuario o contraseña incorrectos.";
+$_SESSION['error'] = "Usuario o contraseña incorrectos";
 header("Location: ../login.php");
 exit;
 

@@ -1320,123 +1320,57 @@ if (!isset($_SESSION['usuario_id'])) {
                 </header>
 
 
-                <div class="module-placeholder">
+                <div class="cont-alertas">
 
-                    <<div class="cont-alertas">
+                    <div class="alert-header">
 
-                        <div class="cont-cards-alertas">
+                        <nav class="filtros">
+                            <button class="btn-filtros active-btn" data-action="activas">Activas</button>
+                            <button class="btn-filtros" data-action="resueltas">Resueltas</button>
+                            <button class="btn-filtros" data-action="todas">Todas</button>
+                        </nav>
 
-                            <div class="cards-alerta">
-                                <p>Alertas activas</p>
-                                <span class="total-alerta">7</span>
-                            </div>
+                        <form action="" method="GET">
+                            <input type="search" name="buscar" placeholder="Buscar por producto...">
+                            <span class="icono-lupa"><img src="assets/iconos_productos/buscar.svg" alt=""></span>
+                        </form>
 
-                            <div class="cards-alerta">
-                                <p>Agotados</p>
-                                <span class="total-alerta danger">3</span>
-                            </div>
+                    </div>
 
-                            <div class="cards-alerta">
-                                <p>Stock bajo</p>
-                                <span class="total-alerta warning">4</span>
-                            </div>
+                    <div class="tabla-alertas">
 
-                            <div class="cards-alerta">
-                                <p>Sobre-stock</p>
-                                <span class="total-alerta info">0</span>
-                            </div>
+                        <table>
 
-                        </div>
+                            <thead>
+                                <tr>
+                                    <th>PRODUCTO</th>
+                                    <th>SKU</th>
+                                    <th>TIPO DE ALERTA</th>
+                                    <th>STOCK ACTUAL</th>
+                                    <th>GENERADA</th>
+                                    <th>ACCIÓN</th>
+                                </tr>
+                            </thead>
 
-                        <div class="alertas-header">
+                            <tbody id="fila-alert" class="filas-alertas">
+                                <tr>
+                                    <td class="producto">Leche Entera 1L</td>
+                                    <td>SKU-10234</td>
+                                    <td><span class="tipo-alerta  agotado">Agotado</span></td>
+                                    <td>0</td>
+                                    <td>Hoy, 08:14 am</td>
+                                    <td>
+                                        <div class="acciones">
+                                            <button data-action="marcar-resuelta" id="resol-alert">Marcar Resuelta</button>
+                                            <span id="alert-resuelta" class="resuelta oculto">Resuelta ✓</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
 
-                            <nav class="filtros">
-                                <button class="btn-filtros active-btn" data-action="todas">Todas</button>
-                                <button class="btn-filtros" data-action="activas">Activas</button>
-                                <button class="btn-filtros" data-action="resueltas">Resueltas</button>
-                            </nav>
+                        </table>
 
-                            <form action="" method="GET">
-                                <input type="search" name="buscar" placeholder="Buscar por producto o SKU...">
-                                <span class="icono-lupa"><img src="assets/iconos_productos/buscar.svg" alt=""></span>
-                            </form>
-
-                        </div>
-
-                        <div class="tabla-alertas">
-                            <table>
-
-                                <thead>
-                                    <tr>
-                                        <th>PRODUCTO</th>
-                                        <th>TIPO</th>
-                                        <th>STOCK ACTUAL</th>
-                                        <th>UMBRAL</th>
-                                        <th>FECHA</th>
-                                        <th>ESTADO</th>
-                                        <th>ACCIONES</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-
-                                    <tr>
-                                        <td>
-                                            <span class="producto">Leche Entera 1L</span>
-                                            <br><span class="sku">SKU-10234</span>
-                                        </td>
-                                        <td><span class="tipo-alerta agotado">Agotado</span></td>
-                                        <td>0</td>
-                                        <td>Mín. 20</td>
-                                        <td>02/08/2026 08:10am</td>
-                                        <td><span class="estado-alerta activa">Activa</span></td>
-                                        <td>
-                                            <div class="acciones">
-                                                <button data-action="resolver-alerta" id="1">Marcar atendida</button>
-                                                <button data-action="ver-producto" id="1">Ver producto</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <span class="producto">Detergente 3kg</span>
-                                            <br><span class="sku">SKU-10891</span>
-                                        </td>
-                                        <td><span class="tipo-alerta stock-bajo">Stock bajo</span></td>
-                                        <td>8</td>
-                                        <td>Mín. 15</td>
-                                        <td>01/08/2026 06:45pm</td>
-                                        <td><span class="estado-alerta activa">Activa</span></td>
-                                        <td>
-                                            <div class="acciones">
-                                                <button data-action="resolver-alerta" id="1">Marcar atendida</button>
-                                                <button data-action="ver-producto" id="1">Ver producto</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <span class="producto">Aceite Girasol 1L</span>
-                                            <br><span class="sku">SKU-10456</span>
-                                        </td>
-                                        <td><span class="tipo-alerta sobre-stock">Sobre-stock</span></td>
-                                        <td>420</td>
-                                        <td>Máx. 300</td>
-                                        <td>30/07/2026 11:20am</td>
-                                        <td><span class="estado-alerta resuelta">Resuelta</span></td>
-                                        <td>
-                                            <div class="acciones">
-                                                <button data-action="ver-producto" id="1">Ver producto</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-
-                            </table>
-                        </div>
+                    </div>
 
                 </div>
 

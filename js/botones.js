@@ -7,3 +7,21 @@ botones.forEach(boton =>{
         boton.classList.add('active-btn')
     });
 });
+
+
+//ACCIÓN DE MARCAR ALERTA COMO RESUELTA
+const boton = document.getElementById('resol-alert');
+const texto = document.getElementById('alert-resuelta');
+const fila = document.getElementById('fila-alert');
+
+boton.addEventListener('click', function(){
+    
+    let confirmar = confirm("¿Marcar esta alerta como resuelta?");
+
+    if(confirmar){
+        boton.classList.add('oculto');
+        texto.classList.remove('oculto');
+       // fila.classList.add('oculto');
+    }
+
+});

@@ -1160,7 +1160,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
                     </div>
 
-                    <div class="tabla-ventas">
+                    <div class="tabla-categ">
 
                         <table>
 
@@ -1178,12 +1178,12 @@ if (!isset($_SESSION['usuario_id'])) {
 
                             <tbody>
                                 <tr>
-                                    <td class="ticket">#00482</td>
+                                    <td>#00482</td>
                                     <td>Daniela Eslava</td>
                                     <td>02/08/2026 10:32pm</td>
                                     <td>3 lineas</td>
                                     <td>$23.100</td>
-                                    <td><span class="estado-venta confir">Confirmada</span></td>
+                                    <td><span>Confirmada</span></td>
                                     <td>
                                         <div class="acciones">
                                             <button data-action="ver-venta" id="1">Ver</button>
@@ -1235,55 +1235,74 @@ if (!isset($_SESSION['usuario_id'])) {
 
                 </header>
 
-                <div class="cont-compras">
+                    <div class="cont-compras">
 
-                    <div class="categ-header">
+                        <div class="categ-header">
 
-                        <form action="" method="GET">
-                            <input type="search" name="buscar" placeholder="Buscar por proveedor...">
-                            <span class="icono-lupa"><img src="assets/iconos_productos/buscar.svg" alt=""></span>
-                        </form>
+                            <form action="" method="GET">
+                                <input type="search" name="buscar" placeholder="Buscar por proveedor...">
+                                <span class="icono-lupa"><img src="assets/iconos_productos/buscar.svg" alt=""></span>
+                            </form>
 
-                        <button data-action="nueva-venta" id="1"><span>+</span> Nueva compra</button>
+                            <button data-action="nueva-venta" id="1"><span>+</span> Nueva compra</button>
+
+                        </div>
+
+                        <div class="tabla-compras">
+                            <table>
+
+                                <thead>
+                                    <tr>
+                                        <th>COMPRA</th>
+                                        <th>PROVEEDOR</th>
+                                        <th>USUARIO</th>
+                                        <th>FECHA</th>
+                                        <th>PRODUCTOS</th>
+                                        <th>TOTAL</th>
+                                        <th>ESTADO</th>
+                                        <th>ACCIONES</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+                                        <td>#00118</td>
+                                        <td><span class="proveedor">Distribuidora La Central</span></td>
+                                        <td>Julián Gimenez</td>
+                                        <td>02/08/2026 09:15am</td>
+                                        <td>5 líneas</td>
+                                        <td>$412.600</td>
+                                        <td><span class="estado confirmada">Confirmada</span></td>
+                                        <td>
+                                            <div class="acciones">
+                                                <button data-action="ver-compra" id="1">Ver</button>
+                                                <button data-action="anular-compra" id="1">Anular</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>#00117</td>
+                                        <td><span class="proveedor">Alimentos Del Valle S.A.S.</span></td>
+                                        <td>Julián Gimenez</td>
+                                        <td>01/08/2026 04:52pm</td>
+                                        <td>2 líneas</td>
+                                        <td>$96.000</td>
+                                        <td><span class="estado anulada">Anulada</span></td>
+                                        <td>
+                                            <div class="acciones">
+                                                <button data-action="ver-compra" id="1">Ver</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                        </div>
 
                     </div>
-
-                    <div class="tabla-compras">
-
-                        <table>
-
-                            <thead>
-                                <tr>
-                                    <th>PROVEEDOR</th>
-                                    <th>REGISTRADA POR</th>
-                                    <th>FECHA</th>
-                                    <th>TOTAL</th>
-                                    <th>ESTADO</th>
-                                    <th>ACCIONES</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td class="provee">Distribuidora La Central</td>
-                                    <td>Julian Bermudez</td>
-                                    <td>02/08/2026 10:32pm</td>
-                                    <td>$1,840,000</td>
-                                    <td><span class="estado-compra confir">Confirmada</span></td>
-                                    <td>
-                                        <div class="acciones">
-                                            <button data-action="ver-compra" id="1">Ver</button>
-                                            <button data-action="anular-compra" id="1">Anular</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
 
             </section>
 
@@ -1300,7 +1319,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
                 <header>
 
-                    <h2>Alertas</h2>
+                    <h2>Alertas activas</h2>
 
                     <div class="cont-cuenta">
 
@@ -1374,360 +1393,228 @@ if (!isset($_SESSION['usuario_id'])) {
 
                 </div>
 
-    </div>
+            </section>
 
-    </section>
-
-
-    <!-- =================================================
+            <!-- =================================================
                  REPORTES
             ================================================== -->
 
-    <section
-        id="reportes"
-        class="seccion"
-        data-module="reportes"
-        aria-hidden="true">
+            <section
+                id="reportes"
+                class="seccion"
+                data-module="reportes"
+                aria-hidden="true">
 
-        <header>
+                <header>
 
-            <h2>Reportes</h2>
+                    <h2>Reportes</h2>
 
-            <div class="cont-cuenta">
+                    <div class="cont-cuenta">
 
-                <span>ADMINISTRADOR</span>
+                        <span>ADMINISTRADOR</span>
 
-                <a
-                    href="#"
-                    class="cuenta"
-                    data-target="cuenta">
+                        <a
+                            href="#"
+                            class="cuenta"
+                            data-target="cuenta">
 
-                    <span>MP</span>
+                            <span>MP</span>
 
-                </a>
+                        </a>
 
-            </div>
+                    </div>
 
-        </header>
+                </header>
 
 
-        <div class="cont-reportes">
+                <div class="cont-reportes">
 
-            <div class="reportes-header">
+                    <div class="alert-header">
 
-                <nav class="filtros">
-                    <button class="btn-filtros active-btn" data-report="valorizacion">Valorización</button>
-                    <button class="btn-filtros" data-report="rotacion">Rotación</button>
-                    <button class="btn-filtros" data-report="mas-vendidos">Más / menos vendidos</button>
-                    <button class="btn-filtros" data-report="ventas-periodo">Ventas por periodo</button>
-                </nav>
+                        <nav class="filtros">
+                            <button class="btn-filtros active-btn" data-action="valorizacion">Valorización de inventario</button>
+                            <button class="btn-filtros" data-action="rotacion">Rotación</button>
+                            <button class="btn-filtros" data-action="mas/menos-vendidos">Más/menos vendidos</button>
+                            <button class="btn-filtros" data-action="ventas-periodo">Ventas por periodo</button>
+                        </nav>
 
-                <div class="reportes-acciones">
-                    <select name="periodo" id="periodo">
-                        <option value="hoy">Hoy</option>
-                        <option value="semana">Esta semana</option>
-                        <option value="mes" selected>Este mes</option>
-                        <option value="personalizado">Personalizado</option>
-                    </select>
-                    <button data-action="exportar-pdf" id="1">Exportar PDF</button>
-                    <button data-action="exportar-excel" id="1">Exportar Excel</button>
+                        <div class="boton-exportar">
+                            <button class="btn-exportar" data-action="exportar"><span><img src="assets/iconos_reportes/exportar.svg" alt=""></span>Exportar PDF/Excel</button>
+                        </div>
+
+                    </div>
+
+                    <div class="cards-reportes">
+
+                        <div class="cards">
+                            <p>Valor total del inventario</p>
+
+                            <span class="total-prods">
+                                $86.4M
+                            </span>
+
+                            <span class="estad">
+                                A la fecha de hoy
+                            </span>
+                        </div>
+
+                        <div class="cards">
+                            <p>Productos valorizados</p>
+
+                            <span class="total-prods">
+                                1,248
+                            </span>
+
+                            <span class="estad">
+                                102 categorías
+                            </span>
+                        </div>
+
+                        <div class="cards">
+                            <p>Producto de mayor valor</p>
+
+                            <span class="total-prods">
+                                Café molido 500g
+                            </span>
+
+                            <span class="estad">
+                                $4.1M en stock
+                            </span>
+                        </div>
+                    </div>
+
                 </div>
 
-            </div>
-
-            <!-- Panel: Valorización (RF-32) -->
-            <div class="reporte-panel active" data-panel="valorizacion">
-
-                <div class="cont-cards-reporte">
-                    <div class="cards-reporte">
-                        <p>Valor total del inventario</p>
-                        <span class="valor-reporte">$86.4M</span>
-                    </div>
-                    <div class="cards-reporte">
-                        <p>Productos valorizados</p>
-                        <span class="valor-reporte">1,248</span>
-                    </div>
-                    <div class="cards-reporte">
-                        <p>Categoría con mayor valor</p>
-                        <span class="valor-reporte">Abarrotes</span>
-                    </div>
-                </div>
-
-                <div class="tabla-reporte">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>PRODUCTO</th>
-                                <th>CATEGORÍA</th>
-                                <th>STOCK</th>
-                                <th>COSTO UNITARIO</th>
-                                <th>VALOR TOTAL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="producto">Arroz Diana 500g</span></td>
-                                <td>Abarrotes</td>
-                                <td>184</td>
-                                <td>$2,600</td>
-                                <td>$478,400</td>
-                            </tr>
-                            <tr>
-                                <td><span class="producto">Detergente 3kg</span></td>
-                                <td>Abarrotes</td>
-                                <td>0</td>
-                                <td>$3,400</td>
-                                <td>$0</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-
-            <!-- Panel: Rotación (RF-33) -->
-            <div class="reporte-panel" data-panel="rotacion">
-
-                <div class="cont-cards-reporte">
-                    <div class="cards-reporte">
-                        <p>Rotación promedio</p>
-                        <span class="valor-reporte">4.2x</span>
-                    </div>
-                    <div class="cards-reporte">
-                        <p>Producto de mayor rotación</p>
-                        <span class="valor-reporte">Arroz Diana 500g</span>
-                    </div>
-                </div>
-
-                <div class="tabla-reporte">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>PRODUCTO</th>
-                                <th>UNIDADES VENDIDAS</th>
-                                <th>STOCK PROMEDIO</th>
-                                <th>ÍNDICE DE ROTACIÓN</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="producto">Arroz Diana 500g</span></td>
-                                <td>612</td>
-                                <td>145</td>
-                                <td>4.2x</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-
-            <!-- Panel: Más / menos vendidos (RF-34) -->
-            <div class="reporte-panel" data-panel="mas-vendidos">
-
-                <div class="cont-cards-reporte">
-                    <div class="cards-reporte">
-                        <p>Producto más vendido</p>
-                        <span class="valor-reporte">Arroz Diana 500g</span>
-                    </div>
-                    <div class="cards-reporte">
-                        <p>Producto menos vendido</p>
-                        <span class="valor-reporte">Aceite Girasol 1L</span>
-                    </div>
-                </div>
-
-                <div class="tabla-reporte">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>PRODUCTO</th>
-                                <th>UNIDADES VENDIDAS</th>
-                                <th>INGRESOS GENERADOS</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="producto">Arroz Diana 500g</span></td>
-                                <td>612</td>
-                                <td>$1,959,000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-
-            <!-- Panel: Ventas por periodo (RF-35) -->
-            <div class="reporte-panel" data-panel="ventas-periodo">
-
-                <div class="cont-cards-reporte">
-                    <div class="cards-reporte">
-                        <p>Total de ventas del periodo</p>
-                        <span class="valor-reporte">$24.8M</span>
-                    </div>
-                    <div class="cards-reporte">
-                        <p>Transacciones</p>
-                        <span class="valor-reporte">318</span>
-                    </div>
-                    <div class="cards-reporte">
-                        <p>Ticket promedio</p>
-                        <span class="valor-reporte">$78,000</span>
-                    </div>
-                </div>
-
-                <div class="tabla-reporte">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>FECHA</th>
-                                <th>TRANSACCIONES</th>
-                                <th>TOTAL VENDIDO</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>02/08/2026</td>
-                                <td>42</td>
-                                <td>$1,248,000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+            </section>
 
 
-    <!-- =================================================
+            <!-- =================================================
                  USUARIOS
             ================================================== -->
 
-    <section
-        id="usuarios"
-        class="seccion"
-        data-module="usuarios"
-        aria-hidden="true">
+            <section
+                id="usuarios"
+                class="seccion"
+                data-module="usuarios"
+                aria-hidden="true">
 
-        <header>
+                <header>
 
-            <h2>Usuarios</h2>
+                    <h2>Usuarios</h2>
 
-            <div class="cont-cuenta">
+                    <div class="cont-cuenta">
 
-                <span>ADMINISTRADOR</span>
+                        <span>ADMINISTRADOR</span>
 
-                <a
-                    href="#"
-                    class="cuenta"
-                    data-target="cuenta">
+                        <a
+                            href="#"
+                            class="cuenta"
+                            data-target="cuenta">
 
-                    <span>MP</span>
+                            <span>MP</span>
 
-                </a>
+                        </a>
 
-            </div>
+                    </div>
 
-        </header>
-
-
-        <div class="cont-usuarios">
-
-            <div class="usuarios-header">
-
-                <form action="" method="GET">
-                    <input type="search" name="buscar" placeholder="Buscar por nombre o correo...">
-                    <span class="icono-lupa"><img src="assets/iconos_productos/buscar.svg" alt=""></span>
-                </form>
-
-                <select name="rol" id="rol">
-                    <option value="todos">Todos los roles</option>
-                    <option value="administrador">Administrador</option>
-                    <option value="vendedor">Vendedor / Cajero</option>
-                    <option value="bodega">Encargado de bodega</option>
-                </select>
-
-                <button data-action="nuevo-usuario" id="1"><span>+</span> Nuevo usuario</button>
-
-            </div>
-
-            <div class="tabla-usuarios">
-                <table>
-
-                    <thead>
-                        <tr>
-                            <th>USUARIO</th>
-                            <th>ROL</th>
-                            <th>ESTADO</th>
-                            <th>ÚLTIMA SESIÓN</th>
-                            <th>ACCIONES</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-                            <td>
-                                <span class="usuario">Mariana Pardo</span>
-                                <br><span class="correo">mariana.pardo@inventrack.com</span>
-                            </td>
-                            <td><span class="rol administrador">Administrador</span></td>
-                            <td><span class="estado activo">Activo</span></td>
-                            <td>02/08/2026 08:02am</td>
-                            <td>
-                                <div class="acciones">
-                                    <button data-action="editar-usuario" id="1">Editar</button>
-                                    <button data-action="desactivar-usuario" id="1">Desactivar</button>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <span class="usuario">Julián Gimenez</span>
-                                <br><span class="correo">julian.gimenez@inventrack.com</span>
-                            </td>
-                            <td><span class="rol bodega">Encargado de bodega</span></td>
-                            <td><span class="estado activo">Activo</span></td>
-                            <td>02/08/2026 09:10am</td>
-                            <td>
-                                <div class="acciones">
-                                    <button data-action="editar-usuario" id="1">Editar</button>
-                                    <button data-action="desactivar-usuario" id="1">Desactivar</button>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <span class="usuario">Daniela Eslava</span>
-                                <br><span class="correo">daniela.eslava@inventrack.com</span>
-                            </td>
-                            <td><span class="rol vendedor">Vendedor / Cajero</span></td>
-                            <td><span class="estado bloqueado">Bloqueado</span></td>
-                            <td>28/07/2026 07:40pm</td>
-                            <td>
-                                <div class="acciones">
-                                    <button data-action="editar-usuario" id="1">Editar</button>
-                                    <button data-action="activar-usuario" id="1">Activar</button>
-                                </div>
-                            </td>
-                        </tr>
-
-                    </tbody>
-
-                </table>
-            </div>
-
-        </div>
+                </header>
 
 
-    </section>
+                <div class="cont-usuarios">
+
+                    <div class="usuarios-header">
+
+                        <form action="" method="GET">
+                            <input type="search" name="buscar" placeholder="Buscar por nombre o correo...">
+                            <span class="icono-lupa"><img src="assets/iconos_productos/buscar.svg" alt=""></span>
+                        </form>
+
+                        <select name="rol" id="rol">
+                            <option value="todos">Todos los roles</option>
+                            <option value="administrador">Administrador</option>
+                            <option value="vendedor">Vendedor / Cajero</option>
+                            <option value="bodega">Encargado de bodega</option>
+                        </select>
+
+                        <button data-action="nuevo-usuario" id="1"><span>+</span> Nuevo usuario</button>
+
+                    </div>
+
+                    <div class="tabla-usuarios">
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>USUARIO</th>
+                                    <th>ROL</th>
+                                    <th>ESTADO</th>
+                                    <th>ÚLTIMA SESIÓN</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        <span class="usuario">Mariana Pardo</span>
+                                        <br><span class="correo">mariana.pardo@inventrack.com</span>
+                                    </td>
+                                    <td><span class="rol administrador">Administrador</span></td>
+                                    <td><span class="estado activo">Activo</span></td>
+                                    <td>02/08/2026 08:02am</td>
+                                    <td>
+                                        <div class="acciones">
+                                            <button data-action="editar-usuario" id="1">Editar</button>
+                                            <button data-action="desactivar-usuario" id="1">Desactivar</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="usuario">Julián Gimenez</span>
+                                        <br><span class="correo">julian.gimenez@inventrack.com</span>
+                                    </td>
+                                    <td><span class="rol bodega">Encargado de bodega</span></td>
+                                    <td><span class="estado activo">Activo</span></td>
+                                    <td>02/08/2026 09:10am</td>
+                                    <td>
+                                        <div class="acciones">
+                                            <button data-action="editar-usuario" id="1">Editar</button>
+                                            <button data-action="desactivar-usuario" id="1">Desactivar</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="usuario">Daniela Eslava</span>
+                                        <br><span class="correo">daniela.eslava@inventrack.com</span>
+                                    </td>
+                                    <td><span class="rol vendedor">Vendedor / Cajero</span></td>
+                                    <td><span class="estado bloqueado">Bloqueado</span></td>
+                                    <td>28/07/2026 07:40pm</td>
+                                    <td>
+                                        <div class="acciones">
+                                            <button data-action="editar-usuario" id="1">Editar</button>
+                                            <button data-action="activar-usuario" id="1">Activar</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
 
 
-    </main>
+            </section>
+
+
+        </main>
 
     </div>
 

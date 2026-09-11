@@ -4,7 +4,7 @@
  * Cambia entre los módulos sin recargar index.php.
  *
  * Los módulos están preparados como secciones independientes
- * dentro de #cont-principal.
+ * dentro de cont-principal.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
